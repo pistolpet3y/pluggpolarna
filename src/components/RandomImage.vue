@@ -60,6 +60,7 @@ watch(route, () => {
   object-fit: contain;
   width: auto;
   display: block;
+  overflow: hidden;
 }
 
 .character-image.home {
@@ -69,6 +70,7 @@ watch(route, () => {
   margin-bottom: -20px;
   position: absolute;
   top: 200px;
+  overflow: hidden;
 }
 
 

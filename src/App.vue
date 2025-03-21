@@ -155,7 +155,7 @@ p {
 
 .navigation-list li:nth-child(1) .button {
   background-color: #4cb5f5;
-  transform: translateY(-10px) rotate(-6deg);
+  transform: translateY(-6px) rotate(-6deg);
 }
 
 .navigation-list li:nth-child(2) .button {

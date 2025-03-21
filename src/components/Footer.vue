@@ -71,7 +71,7 @@ footer::before {
   background-image: url('@/assets/footer.g.png');
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: cover;
+  background-size: contain;
   z-index: -1;
 }
 

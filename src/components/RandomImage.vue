@@ -1,7 +1,8 @@
 <template>
   <div class="character-wrapper">
-    <img :src="randomImage" alt="Tecknad figur" class="character-image" id="randomImage"
+    <img :src="randomImage" alt="Tecknad figur" :class="['character-image', category]" id="randomImage"
       :style="{ left: `calc(50% + ${leftValue}px)` }">
+
   </div>
 </template>
 
@@ -21,12 +22,13 @@ const props = defineProps({
 const imageSets = {
   home: [
     { src: "/home/boy.png", left: 50 },
-    { src: "/home/girl.png", left: 50 }
+    { src: "/home/girl.png", left: 40 }
   ],
   ordstriden: [
-    { src: "/ordstriden/battle-boy.png", left: -30 },
-    { src: "/ordstriden/battle-girl.png", left: 30 }
+    { src: "/ordstriden/battle-boy.png", left: -70 },
+    { src: "/ordstriden/battle-girl.png", left: -70 }
   ]
+
 };
 
 // Hämta bilder för vald kategori
@@ -54,7 +56,32 @@ watch(route, () => {
 </script>
 
 <style scoped>
-.character-wrapper {
+.character-image {
+  object-fit: contain;
+  width: auto;
+  display: block;
+}
+
+.character-image.home {
+  object-fit: contain;
+  width: auto;
+  display: block;
+  margin-bottom: -20px;
+  position: absolute;
+  top: 200px;
+}
+
+
+.character-image.ordstriden {
+  max-width: 200px;
+  width: 200px;
+  height: auto;
+  position: absolute;
+  top: 30%;
+  transform: translateY(-30%);
+}
+
+.character-wrapper.home {
   position: absolute;
   left: 50%;
   top: 20px;
@@ -63,10 +90,11 @@ watch(route, () => {
   flex-direction: column;
   align-items: center;
   z-index: 10;
+  margin-bottom: -20px;
 }
 
 /* Lägg till skugga under karaktärerna */
-.character-wrapper::after {
+.character-wrapper.home::after {
   content: "";
   position: absolute;
   width: 150px;

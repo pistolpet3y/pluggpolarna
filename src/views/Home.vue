@@ -1,10 +1,6 @@
 <template>
   <div class="content-wrapper">
     <div class="chat-container">
-      <!-- Slumpmässig karaktär -->
-      <RandomImage category="home" />
-
-      <!-- Pratbubbla -->
       <div id="bubble">
         <h2>Välkommen</h2>
         <p>
@@ -19,11 +15,14 @@
           <br>
           <span style="color: #4cb5f5; font-weight: bold;">äventyret väntar!</span>
         </p>
-
       </div>
+
+      <!-- Slumpmässig karaktär under bubblan -->
+      <RandomImage category="home" />
     </div>
   </div>
 </template>
+
 
 <script setup>
 import RandomImage from '../components/RandomImage.vue';
@@ -31,19 +30,21 @@ import RandomImage from '../components/RandomImage.vue';
 
 <style>
 .chat-container {
+  margin-top: -120px;
+  margin-bottom: 0;
   display: flex;
-  flex-direction: row-reverse;
-  /* Karaktären hamnar alltid till höger */
-  align-items: flex-end;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   position: relative;
+  gap: 10px;
+  padding-bottom: 0;
 }
 
 #bubble {
   position: relative;
   width: 80%;
-  margin-top: -120px;
+  margin-bottom: -20px;
   max-width: 600px;
   left: 10px;
   height: 300px;
@@ -55,39 +56,43 @@ import RandomImage from '../components/RandomImage.vue';
   align-items: center;
   justify-content: center;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
   box-sizing: border-box;
   transform: rotate(-3deg);
 }
 
 .character-image {
+  display: block;
   position: relative;
-  margin-top: 100px;
-  margin-left: 30px;
-  height: 380px !important;
-  /* Justera så att båda bilderna får samma höjd */
+  height: 450px !important;
   object-fit: contain;
+  margin-top: 40px;
+  z-index: 1;
+  /* Säkerställer att den ligger UNDER pratbubblan */
 }
 
 #bubble p {
   max-width: 60%;
   margin-right: 200px;
   font-family: 'Bangers';
-  color: #222;
+  color: #191919;
   /* Nästan svart */
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  -webkit-text-stroke: 0.7px rgba(0, 0, 0, 0.623);
-  /* Svagare svart kontur */
-
   text-align: center;
   line-height: 1.5;
   font-size: 1.45rem;
+}
+
+#bubble p span {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 0.7px rgba(0, 0, 0, 0.637);
 }
 
 
 .content-wrapper {
   margin-top: 80px;
   position: relative;
+  margin-bottom: -160px;
+  padding-bottom: 0;
 }
 
 .text-content {
@@ -123,7 +128,7 @@ h2 {
 
   #bubble p {
     max-width: 55%;
-    font-size: 1.3rem;
+    font-size: 1.32rem;
     margin-top: 8px;
     margin-right: 260px;
 
@@ -131,11 +136,10 @@ h2 {
 
   .character-image {
     position: relative;
-    margin-top: 10px !important;
-    height: 380px !important;
+    height: 360px !important;
     /* Justera så att båda bilderna får samma höjd */
     object-fit: contain;
-    margin-left: 5px;
+    margin-top: -40px;
   }
 
   h2 {

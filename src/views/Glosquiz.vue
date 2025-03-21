@@ -284,6 +284,12 @@ const showResults = () => {
 </script>
 
 <style scoped>
+body {
+  max-width: 375px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .header-container {
   display: flex;
   align-items: center;
@@ -292,7 +298,7 @@ const showResults = () => {
 }
 
 .quiz-container {
-  max-width: 100%;
+  max-width: 375px;
   margin: 0 auto;
   text-align: center;
 }

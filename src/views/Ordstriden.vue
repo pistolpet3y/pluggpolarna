@@ -249,6 +249,7 @@ newRound();
 
 <style scoped>
 .ordstriden-container {
+  width: 375px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -275,20 +276,9 @@ h2 {
   transform: translateY(15%);
 }
 
-.ordstriden-hero {
-  width: 180px;
-  height: auto;
-  position: absolute;
-  top: 0px;
-}
 
 .image-container {
   position: absolute;
-}
-
-.hero-img {
-  width: 180px;
-  height: auto;
 }
 
 .monster-img {

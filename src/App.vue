@@ -104,7 +104,6 @@ body {
 
 body {
   width: 100%;
-  max-width: 375px;
   margin: 0 auto;
   font-family: "Arial", "Helvetica", "sans-serif";
   font-size: 1.05rem;
@@ -149,21 +148,26 @@ p {
   line-height: 1.8;
 }
 
-.navigation-list li:nth-child(1) .button {
-  background-color: #4cb5f5;
-}
 
 .navigation-list li:hover #blue-mark {
   display: block;
 }
 
+.navigation-list li:nth-child(1) .button {
+  background-color: #4cb5f5;
+  transform: translateY(-10px) rotate(-6deg);
+}
+
 .navigation-list li:nth-child(2) .button {
   background-color: #f77f00;
+  transform: translateY(1px) rotate(7deg);
 }
 
 .navigation-list li:nth-child(3) .button {
   background-color: #ff99cc;
+  transform: translateX(1px) rotate(0deg);
 }
+
 
 .navigation-list {
   position: relative;
@@ -174,37 +178,8 @@ p {
   list-style: none;
 }
 
-#blue-mark,
-#orange-mark,
-#pink-mark {
-  position: absolute;
-  top: 110%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 83px;
-  height: 11px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: none;
-}
-
-.navigation-list li:hover #blue-mark {
-  display: block;
-  background-image: url('/lines/blue-line.png');
-}
-
-.navigation-list li:hover #orange-mark {
-  display: block;
-  background-image: url('/lines/orange-line.png');
-}
-
-.navigation-list li:hover #pink-mark {
-  display: block;
-  background-image: url('/lines/pink-line.png');
-}
 
 ul li:nth-child(1) {
-  transform: rotate(-2deg);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -212,9 +187,11 @@ ul li:nth-child(1):hover {
   transform: rotate(-4deg);
 }
 
-ul li:nth-child(3) {
-  transform: rotate(2deg);
+ul li:nth-child(2):hover {
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(8deg);
 }
+
 
 ul li:nth-child(3):hover {
   transform: rotate(4deg);
@@ -226,7 +203,8 @@ ul li:nth-child(3):hover {
   box-sizing: border-box;
   color: #111;
   padding: 7px 20px;
-  display: flex;
+  display: inline-block;
+  position: relative;
   font-family: Bangers, Arial, Helvetica, sans-serif;
   font-size: 1.9rem;
   justify-content: center;

@@ -40,7 +40,7 @@ export default {
   display: flex;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
-  z-index: 2;
+  z-index: 10;
 }
 
 .social-icons img {

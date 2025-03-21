@@ -1,7 +1,7 @@
 <template>
   <header>
     <!-- SVG-logotyp -->
-    <svg viewBox="0 -12 375 73" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg viewBox="0 -12 375 70" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
         <!-- Gradienten som texten följer -->
         <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -21,10 +21,10 @@
       </defs>
 
       <!-- Kurvan som texten följer -->
-      <path id="MyPath" fill="none" d="M0 62.5 Q187.5 0 375 62.5" />
+      <path id="MyPath" fill="none" d="M0 50 Q187.5 -10 375 50" />
 
       <!-- Texten som följer kurvan -->
-      <text text-anchor="middle" fill="url(#logoGradient)" font-family="Bangers" font-size="3.5rem">
+      <text dy="-10" text-anchor="middle" fill="url(#logoGradient)" font-family="Bangers" font-size="3.5rem">
         <textPath xlink:href="#MyPath" startOffset="50%">
           Pluggpolarna
         </textPath>
@@ -55,11 +55,24 @@ export default {
 </script>
 
 <style scoped>
+svg {
+  overflow: visible;
+  max-width: 550px;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
 textPath {
   font-family: 'Bangers';
   font-size: 3.5rem;
   letter-spacing: 0.12em;
-
   text-shadow:
     3px 3px 1px #111,
     -1px 1px 1px #111,
@@ -75,7 +88,8 @@ textPath {
   font-family: 'Bangers';
   font-size: 1.5rem;
   letter-spacing: 0.4em;
-  margin-bottom: 40px;
+  margin-bottom: 0;
+  margin-top: -10px;
 }
 
 #tagLine p {
@@ -96,7 +110,7 @@ textPath {
 #cloud img {
   position: absolute;
   width: 1035px;
-  top: -190px;
+  top: -220px;
   transform: translateX(-80px);
   z-index: -1;
 }

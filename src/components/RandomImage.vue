@@ -1,6 +1,8 @@
 <template>
-  <img :src="randomImage" alt="Tecknad figur" class="character-image" id="randomImage"
-    :style="{ left: leftValue, top: isMobile ? mobileTopValue || topValue : topValue }">
+  <div class="character-wrapper">
+    <img :src="randomImage" alt="Tecknad figur" class="character-image" id="randomImage"
+      :style="{ left: `calc(50% + ${leftValue}px)` }">
+  </div>
 </template>
 
 <script setup>
@@ -9,45 +11,35 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const randomImage = ref("");
-const leftValue = ref("");
-const topValue = ref("");
-const mobileTopValue = ref("");
+const leftValue = ref(0);
 
-const isMobile = ref(window.innerWidth <= 480);
-
-const updateScreenSize = () => {
-  isMobile.value = window.innerWidth <= 480;
-};
-
-window.addEventListener("resize", updateScreenSize);
 const props = defineProps({
   category: String
 });
 
-// Bilderna som ska slumpas fram
+// Definiera bildpositioner
 const imageSets = {
   home: [
-    { src: "/home/boy.png", left: "-170px" },
-    { src: "/home/girl.png", left: "370px" }
+    { src: "/home/boy.png", left: 50 },
+    { src: "/home/girl.png", left: 50 }
   ],
   ordstriden: [
-    { src: "/ordstriden/battle-boy.png", left: "-45px", top: "0px", mobileTop: "15px" },
-    { src: "/ordstriden/battle-girl.png", left: "-45px", top: "0px", mobileTop: "-5px" }
+    { src: "/ordstriden/battle-boy.png", left: -30 },
+    { src: "/ordstriden/battle-girl.png", left: 30 }
   ]
 };
 
-// Hämtar bilderna för den valda kategorin
+// Hämta bilder för vald kategori
 const selectedImageSet = computed(() => imageSets[props.category] || imageSets.home);
 
-// Funktion för att slumpa fram en bild
 function choosePic() {
   const randomNum = Math.floor(Math.random() * selectedImageSet.value.length);
   const selectedImage = selectedImageSet.value[randomNum];
+
   console.log("Laddar bild:", selectedImage.src); // Debugging
+
   randomImage.value = selectedImage.src;
   leftValue.value = selectedImage.left;
-  topValue.value = selectedImage.top;
-  mobileTopValue.value = selectedImage.mobileTop || selectedImage.top;
 }
 
 // Kör funktionen när komponenten laddas
@@ -62,10 +54,36 @@ watch(route, () => {
 </script>
 
 <style scoped>
-.character-image {
-  margin-top: 40px;
+.character-wrapper {
   position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 10;
-  transform: translateY(-50%);
 }
+
+/* Lägg till skugga under karaktärerna */
+.character-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  /* Justera storleken på skuggan */
+  height: 30px;
+  /* Oval form */
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  bottom: -10px;
+  /* Justera position */
+  left: 130%;
+  transform: translateX(-50%);
+  filter: blur(8px);
+  /* Lägg till oskärpa */
+  z-index: -1;
+  /* Skuggan placeras under karaktären */
+}
+
+/* Karaktärens stil */
 </style>

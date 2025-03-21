@@ -291,25 +291,33 @@ body {
 }
 
 .header-container {
+  width: 375px;
+  max-width: 375px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .quiz-container {
-  max-width: 375px;
+  justify-content: center;
+  width: 375px;
   margin: 0 auto;
   text-align: center;
 }
 
 #info {
-  margin-left: 10px;
+  margin-left: -255px;
+  /* Justera detta värde tills det ser bra ut */
+  transform: translateY(-30%);
 }
 
 p {
   text-align: center;
   font-size: 1.05rem;
+}
+
+h2 {
+  margin-left: -50px;
 }
 
 .styled {

@@ -149,6 +149,12 @@ newQuestion();
 </script>
 
 <style scoped>
+#info {
+  margin-left: -260px;
+  /* Justera detta värde tills det ser bra ut */
+  transform: translateY(-30%);
+}
+
 .mattemagi-container {
   max-width: 100%;
   margin: 0 auto;

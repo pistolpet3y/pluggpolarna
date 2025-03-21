@@ -6,10 +6,20 @@
 
       <!-- Pratbubbla -->
       <div id="bubble">
-        <h2>Välkommen!</h2>
-        <p>Här lär du dig glosor, matte och stavning genom roliga och färgglada spel. Lär dig, lek och ha kul –
-          <br>äventyret väntar!
+        <h2>Välkommen</h2>
+        <p>
+          Här lär du dig <span style="color: #4cb5f5; font-weight: bold;">glosor</span>,
+          <span style="color: #f77f00; font-weight: bold;">matte</span> och
+          <span style="color: #ff99cc; font-weight: bold;">stavning</span>
+          genom roliga och färgglada spel.
+          <br>
+          <span style="color: #7dffcb; font-weight: bold;">Lär dig</span>,
+          <span style="color: #ff99cc; font-weight: bold;">lek</span> och
+          <span style="color: #f77f00; font-weight: bold;">ha kul</span> –
+          <br>
+          <span style="color: #4cb5f5; font-weight: bold;">äventyret väntar!</span>
         </p>
+
       </div>
     </div>
   </div>
@@ -47,6 +57,7 @@ import RandomImage from '../components/RandomImage.vue';
   text-align: center;
   z-index: 1;
   box-sizing: border-box;
+  transform: rotate(-3deg);
 }
 
 .character-image {
@@ -59,12 +70,20 @@ import RandomImage from '../components/RandomImage.vue';
 }
 
 #bubble p {
-  text-align: center;
-  max-width: 55%;
+  max-width: 60%;
   margin-right: 200px;
-  margin-bottom: auto;
-  font-size: 1.2rem;
+  font-family: 'Bangers';
+  color: #222;
+  /* Nästan svart */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 0.7px rgba(0, 0, 0, 0.623);
+  /* Svagare svart kontur */
+
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.45rem;
 }
+
 
 .content-wrapper {
   margin-top: 80px;
@@ -79,10 +98,20 @@ import RandomImage from '../components/RandomImage.vue';
 }
 
 h2 {
-  font-size: 2rem;
-  margin-top: 30px;
+  font-family: 'Bangers';
+  font-size: 2.5rem;
+  margin-top: 8px;
   margin-bottom: -20px;
   margin-right: 200px;
+  color: #F5F5F5;
+  text-shadow:
+    -2px -2px 0 black,
+    2px 2px 0 black,
+    3px -2px 0 black,
+    -3px 3px 0 black,
+    2px 2px 3px rgba(0, 0, 0, 0.5);
+  /* Diffusare skugga */
+  text-transform: uppercase;
 }
 
 /* Anpassa för HD-skärmar */
@@ -93,10 +122,10 @@ h2 {
   }
 
   #bubble p {
-    max-width: 50%;
-    font-size: .99rem;
-    margin-top: 15px;
-    margin-right: 250px;
+    max-width: 55%;
+    font-size: 1.3rem;
+    margin-top: 8px;
+    margin-right: 260px;
 
   }
 
@@ -111,9 +140,17 @@ h2 {
 
   h2 {
     font-size: 1.8rem;
-    margin-top: 29px;
-    margin-bottom: -20px;
-    margin-right: 250px;
+    margin-top: 6px;
+    margin-bottom: 1px;
+    margin-right: 265px;
+    text-shadow:
+      -1.5px -1.5px 0 black,
+      1.5px 1.5px 0 black,
+      2px -1.5px 0 black,
+      -2px 2px 0 black,
+      1px 1px 2px rgba(0, 0, 0, 0.4);
+    /* Mjukare skugga */
+
   }
 }
 

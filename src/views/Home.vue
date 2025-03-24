@@ -4,16 +4,15 @@
       <div id="bubble">
         <h2>Välkommen</h2>
         <p>
-          Här lär du dig <span style="color: #4cb5f5; font-weight: bold;">glosor</span>,
-          <span style="color: #f77f00; font-weight: bold;">matte</span> och
-          <span style="color: #ff99cc; font-weight: bold;">stavning</span>
+          Här lär du dig glosor,
+          matte och stavning
           genom roliga och färgglada spel.
           <br>
-          <span style="color: #7dffcb; font-weight: bold;">Lär dig</span>,
-          <span style="color: #ff99cc; font-weight: bold;">lek</span> och
-          <span style="color: #f77f00; font-weight: bold;">ha kul</span> –
+          Lär dig,
+          lek och
+          ha kul –
           <br>
-          <span style="color: #4cb5f5; font-weight: bold;">äventyret väntar!</span>
+          äventyret väntar!
         </p>
       </div>
 

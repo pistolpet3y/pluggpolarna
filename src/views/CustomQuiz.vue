@@ -203,6 +203,7 @@ body {
 }
 
 .quiz-container {
+  width: 375px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;

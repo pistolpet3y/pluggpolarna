@@ -1,13 +1,15 @@
 <template>
   <div>
-    <div>
+    <div class="about">
       <h2>Om Oss</h2>
       <p>
-        Pluggpolarna är en lekfull och barnvänlig läxhjälpsplattform som gör inlärning roligare och mer engagerande förskolbarn.
+        Pluggpolarna är en lekfull och barnvänlig läxhjälpsplattform som gör inlärning roligare och mer engagerande
+        förskolbarn.
         Vi fokuserar på att kombinera kunskap och lek, vilket gör att barn lär sig effektivare och med glädje.
       </p>
       <p>
-        Med innehåll på svenska som är anpassat efter barns behov erbjuder vi ett stöd som hjälper föräldrar och skolor att förbättra barns inlärning och skolprestationer
+        Med innehåll på svenska som är anpassat efter barns behov erbjuder vi ett stöd som hjälper föräldrar och skolor
+        att förbättra barns inlärning och skolprestationer
         – allt i en trygg och inspirerande digital miljö.
       </p>
     </div>
@@ -29,7 +31,21 @@
   </div>
 </template>
 
-<style>
+<style scoped>
+.about {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center !important;
+  flex-direction: column;
+  width: 375px !important;
+}
+
+.about h2 {
+  width: 100%;
+  white-space: nowrap;
+  text-align: center;
+}
+
 .its-us {
   display: flex;
   justify-content: center;
